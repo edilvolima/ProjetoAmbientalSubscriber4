@@ -18,6 +18,42 @@ public class SecretariaServicosUrbanos extends javax.swing.JFrame {
     public SecretariaServicosUrbanos() {
         initComponents();
     }
+    
+    
+    
+    public void exibirInformacao(String informacao){
+        String valores[] = informacao.split(";");
+            //valores[0] = area
+            //valores[1] = nome da function
+            //valores[2] = estado do contexto ou informacao relevante (valores de atributos, 
+            //valores[3] = nome do agente de coleta.(somente aparece quando vai chamar o agente
+            if(valores[1].equals("trashMonitor")) {
+                
+                if(valores[2].equals("VAZIA")) {
+                    //setar lixeira como vazia
+                    
+                }
+                else if(valores[2].equals("ENCHENDO")) {
+                    //setar lixeira como enchendo
+                    
+                }
+                else if(valores[2].equals("CHEIA")) {
+                    //setar como cheia
+                }
+            }
+            else if(valores[1].equals("trashGathering")) {
+                
+                if(valores[1].equals("LIMITE")) {
+                    //avisar que a lixeira está proxima de sua capacidade
+                    
+                }
+                else if(valores[1].equals("CHEIA")) {
+                    //avisar que esta chamando o agente e setar o estado do agente
+                    //OBS: o nome do agente esta no valores[3].
+                    
+                }
+            }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
