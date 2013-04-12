@@ -73,7 +73,7 @@ public class SecretariaServicosUrbanos extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jButton1)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel2)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -154,10 +154,14 @@ public class SecretariaServicosUrbanos extends javax.swing.JFrame {
             jButton1.setText("ON");
             jButton1.setBackground(Color.GREEN);
             jButton1.setForeground(Color.RED);
+            jLabel2.setText("Clique para se desconectar do Hub");
         }else{
+            jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufrn/imagens/CaminhaoDesativado.png")));
+            jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufrn/imagens/LixoVazia.png")));
             jButton1.setText("OFF");
             jButton1.setBackground(Color.RED);
             jButton1.setForeground(Color.GREEN);
+            jLabel2.setText("Clique para se conectar ao Hub");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
