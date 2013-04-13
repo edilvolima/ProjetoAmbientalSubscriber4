@@ -15,6 +15,8 @@ public class SecretariaServicosUrbanos extends javax.swing.JFrame {
     /**
      * Creates new form SecretariaMeioAmbiente
      */
+    private AtualizaSubscriber conexao = new AtualizaSubscriber(null);
+    
     public SecretariaServicosUrbanos() {
         initComponents();
     }
@@ -187,11 +189,13 @@ public class SecretariaServicosUrbanos extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         if(jButton1.getText() == "OFF"){
+            conexao.subscribe();
             jButton1.setText("ON");
             jButton1.setBackground(Color.GREEN);
             jButton1.setForeground(Color.RED);
             jLabel2.setText("Clique para se desconectar do Hub");
         }else{
+            conexao.unsubscribe();
             jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufrn/imagens/CaminhaoDesativado.png")));
             jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufrn/imagens/LixoVazia.png")));
             jButton1.setText("OFF");
