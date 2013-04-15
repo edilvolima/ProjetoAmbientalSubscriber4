@@ -113,35 +113,56 @@ public class SecretariaServicosUrbanos extends javax.swing.JFrame {
             else if(valores[1].equals("trashGathering")) {
                 
                 if(valores[1].equals("LIMITE")) {
-                    Texto = Texto + "Lixeira da área " + valores[0] + " está quase cheia";
-                    jTextArea1.setText("" + Texto);
-                    //avisar que a lixeira está proxima de sua capacidade
-                    
+                    if(valores[0].equals(1)){
+                        labelLixoA4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufrn/imagens/LixoEnchendoLimite.png")));
+                        Texto = Texto + "Lixeira da área " + valores[0] + " está quase cheia";
+                        jTextArea1.setText("" + Texto);
+                        //avisar que a lixeira está proxima de sua capacidade
+                    }
+                    if(valores[0].equals(2)){
+                        labelLixoA4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufrn/imagens/LixoEnchendoLimite.png")));
+                        Texto = Texto + "Lixeira da área " + valores[0] + " está quase cheia";
+                        jTextArea1.setText("" + Texto);
+                        //avisar que a lixeira está proxima de sua capacidade
+                    }
+                    if(valores[0].equals(3)){
+                        labelLixoA4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufrn/imagens/LixoEnchendoLimite.png")));
+                        Texto = Texto + "Lixeira da área " + valores[0] + " está quase cheia";
+                        jTextArea1.setText("" + Texto);
+                        //avisar que a lixeira está proxima de sua capacidade
+                    }
+                    if(valores[0].equals(4)){
+                        labelLixoA4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufrn/imagens/LixoEnchendoLimite.png")));
+                        Texto = Texto + "Lixeira da área " + valores[0] + " está quase cheia";
+                        jTextArea1.setText("" + Texto);
+                        //avisar que a lixeira está proxima de sua capacidade
+                    }
+                   
                 }
                 else if(valores[1].equals("CHEIA")) {
                     if(valores[0].equals(1)){
-                        labelAgenteA1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufrn/imagens/LixoCheio.png")));
+                        labelAgenteA1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufrn/imagens/Caminhao.png")));
                         Texto = Texto + "Lixeira da área " + valores[0] + " Cheia, chamando " + valores[3];
                         jTextArea1.setText("" + Texto);
                     //avisar que esta chamando o agente e setar o estado do agente
                     //OBS: o nome do agente esta no valores[3].
                     }
                     if(valores[0].equals(2)){
-                        labelAgenteA2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufrn/imagens/LixoCheio.png")));
+                        labelAgenteA2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufrn/imagens/Caminhao.png")));
                         Texto = Texto + "Lixeira da área " + valores[0] + " Cheia, chamando " + valores[3];
                         jTextArea1.setText("" + Texto);
                     //avisar que esta chamando o agente e setar o estado do agente
                     //OBS: o nome do agente esta no valores[3].
                     }
                     if(valores[0].equals(3)){
-                        labelAgenteA3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufrn/imagens/LixoCheio.png")));
+                        labelAgenteA3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufrn/imagens/Caminhao.png")));
                         Texto = Texto + "Lixeira da área " + valores[0] + " Cheia, chamando " + valores[3];
                         jTextArea1.setText("" + Texto);
                     //avisar que esta chamando o agente e setar o estado do agente
                     //OBS: o nome do agente esta no valores[3].
                     }
                     if(valores[0].equals(4)){
-                        labelAgenteA4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufrn/imagens/LixoCheio.png")));
+                        labelAgenteA4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufrn/imagens/Caminhao.png")));
                         Texto = Texto + "Lixeira da área " + valores[0] + " Cheia, chamando " + valores[3];
                         jTextArea1.setText("" + Texto);
                     //avisar que esta chamando o agente e setar o estado do agente
