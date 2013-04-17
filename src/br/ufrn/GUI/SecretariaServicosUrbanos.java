@@ -6,16 +6,11 @@ package br.ufrn.GUI;
 
 import java.awt.Color;
 
-/**
- *
- * @author Zeff
- */
 public class SecretariaServicosUrbanos extends javax.swing.JFrame {
 
-    /**
-     * Creates new form SecretariaMeioAmbiente
-     */
-    private AtualizaSubscriber conexao = new AtualizaSubscriber(null);
+    private AtualizaSubscriber subscriberTrash;
+    private AtualizaSubscriber subscriberGathering;
+    
     private String Texto;
 
     public SecretariaServicosUrbanos() {
@@ -421,14 +416,23 @@ public class SecretariaServicosUrbanos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if (jButton1.getText() == "OFF") {
-            conexao.subscribe();
-            jButton1.setText("ON");
+        if (jButton1.getText().equals("Desconectado")) {
+            
+            subscriberTrash = new AtualizaSubscriber(AtualizaSubscriber.TRASH, this);
+            subscriberGathering = new AtualizaSubscriber(AtualizaSubscriber.GATHERING, this);
+            
+            subscriberTrash.subscribe();
+            subscriberGathering.subscribe();
+            
+            jButton1.setText("Conectado");
             jButton1.setBackground(Color.GREEN);
             jButton1.setForeground(Color.RED);
             jLabel2.setText("Clique para se desconectar do Hub");
         } else {
-            conexao.unsubscribe();
+
+            subscriberTrash.unsubscribe();
+            subscriberGathering.unsubscribe();
+            
             labelAgenteA1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufrn/imagens/CaminhaoDesativado.png")));
             labelLixoA1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufrn/imagens/LixoVazia.png")));
             labelAgenteA2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufrn/imagens/CaminhaoDesativado.png")));
@@ -437,7 +441,7 @@ public class SecretariaServicosUrbanos extends javax.swing.JFrame {
             labelLixoA3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufrn/imagens/LixoVazia.png")));
             labelAgenteA4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufrn/imagens/CaminhaoDesativado.png")));
             labelLixoA4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ufrn/imagens/LixoVazia.png")));
-            jButton1.setText("OFF");
+            jButton1.setText("Desconectado");
             jButton1.setBackground(Color.RED);
             jButton1.setForeground(Color.GREEN);
             jLabel2.setText("Clique para se conectar ao Hub");
